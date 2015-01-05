@@ -90,7 +90,7 @@ def get_ec2_instances(conn, filter):
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', '--profile', type=str,
-                       default='Appcito', help='Configuration profile')
+                       default='Default', help='Configuration profile')
     parser.add_argument('-f','--filter', type=str, default='',
                         help=('Amazon EC2 API filter to limit the result returned. '
                               '(Example: --filter running)'))

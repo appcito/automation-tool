@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
 
 """
+"Author: Prajith Nair
 """
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
-#import csv
-#import signal
-#mport sys
-#mport time
 import logging
 import argparse
 import boto.ec2
@@ -94,11 +91,15 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', '--profile', type=str,
                        default='Appcito', help='Configuration profile')
-    parser.add_argument('--filter', type=str, default='',
+    parser.add_argument('-f','--filter', type=str, default='',
                         help=('Amazon EC2 API filter to limit the result returned. '
                               '(Example: --filter running)'))
     return parser.parse_args()
 
+def optional(a):
+    if not a:
+        return ''
+    return str(a)
 
 if __name__ == '__main__':
     try:
@@ -107,7 +108,3 @@ if __name__ == '__main__':
       # do nothing here
         pass
 
-def optional(a):
-    if not a:
-        return ''
-    return str(a)

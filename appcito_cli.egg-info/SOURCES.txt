@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+Appcito/__init__.py
+Appcito/__main__.py
+Appcito/appcito.py
+appcito_cli.egg-info/PKG-INFO
+appcito_cli.egg-info/SOURCES.txt
+appcito_cli.egg-info/dependency_links.txt
+appcito_cli.egg-info/entry_points.txt
+appcito_cli.egg-info/requires.txt
+appcito_cli.egg-info/top_level.txt

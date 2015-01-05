@@ -1,0 +1,23 @@
+appcito-cli
+========================
+
+Usage
+-----
+usage: appcito-cli [-h] [-k AWS_KEY] [-s AWS_SECRET] [--filter FILTER]
+
+Display EC2 hosts in any region by default
+
+optional arguments:
+-h, --help            show this help message and exit
+-k AWS_KEY, --aws-key AWS_KEY (Amazon EC2 Key)
+                                                   
+-s AWS_SECRET, --aws-secret AWS_SECRET (Amazon EC2 Secret)
+                                                       
+--filter FILTER  Amazon EC2 API filter to limit the result returned.(Example: --filter running)
+                                                                                                       
+
+Installation sets up for appcito-cli command
+**************************************
+Run : sudo python setup.py install
+Once setup.py is executed successfully, you can run:  appcito-cli 
+

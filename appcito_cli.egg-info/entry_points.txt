@@ -1,0 +1,3 @@
+[console_scripts]
+appcito-cli = Appcito.appcito:main
+

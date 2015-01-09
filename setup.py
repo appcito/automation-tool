@@ -10,7 +10,7 @@ from setuptools import setup
 
 version = re.search(
     '^__version__\s*=\s*"(.*)"',
-    open('Appcito/appcito.py').read(),
+    open('Automation/instancelist.py').read(),
     re.M
     ).group(1)
 
@@ -20,13 +20,13 @@ with open("README.rst", "rb") as f:
 
 
 setup(
-    name = "appcito-cli",
-    packages = ["Appcito"],
+    name = "instancelist-cli",
+    packages = ["Automation"],
     entry_points = {
-        "console_scripts": ['appcito-cli = Appcito.appcito:main']
+        "console_scripts": ['instancelist-cli = Automation.instancelist:main']
         },
     version = version,
-    description = "Appcito Utility",
+    description = "Ec2 instance listing Utility",
     long_description = long_descr,
     author = "Prajith Nair",
     author_email = "prajith@appcito.com",

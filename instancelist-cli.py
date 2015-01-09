@@ -7,7 +7,7 @@
 """
 
 
-from Appcito.appcito import main
+from Automation.instancelist import main
 
 
 if __name__ == '__main__':

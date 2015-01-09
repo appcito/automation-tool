@@ -1,11 +1,11 @@
-# -*- coding: utf-8 -*-
+
 
 """
-"Author: Prajith Nair
+" Author : Prajith Nair
 """
 
 __version__ = "0.0.2"
-
+import csv
 import logging
 import argparse
 import boto.ec2
@@ -13,18 +13,20 @@ import boto.ec2.cloudwatch
 import boto
 import ConfigParser
 import os
+import sys,getopt
 from os.path import expanduser
 from prettytable import PrettyTable as table
 
 # list if default regions selected by default
 aws_regs = [ "us-east-1" , "us-west-1", "us-west-2", "eu-west-1", "ap-southeast-1", "ap-northeast-1", "ap-southeast-2", "sa-east-1" ]
-tbl = table(["Instance Name", "Instance-id", "DNS","Public IP", "Size", "Region", "Internal IP","VPC Id", "Start Time", "Status"])
+tbl = table(["Instance Name", "Instance-id", "DNS","Public IP", "Size", "Region", "Private IP","VPC Id", "Start Time", "Status"])
 dependency_dictionary = {}
 
+
 def setup_config():
-    config_home = os.path.sep.join([expanduser('~'),'.appcito','config'])
+    config_home = os.path.sep.join([expanduser('~'),'.cred','config'])
     if (not os.path.exists(config_home)):
-        logging.error("appcito configurations not initialized")
+        logging.error("Configurations not initialized")
         raise SystemExit
     return config_home
 
@@ -51,6 +53,8 @@ colors = {
     'DEFAULT' : '\033[99m'
 }
 
+
+
 def main():
     opts = vars(parse_args())
     region = None
@@ -59,7 +63,6 @@ def main():
 
     profile = opts['profile']
     filters = opts['filter']
-
     aws_key = config.get( profile, 'key')
     aws_secret = config.get( profile, 'secret')
 
@@ -76,6 +79,7 @@ def main():
     print colors["GREEN"], "\n", tbl, colors["END"]
 
 
+
 def get_ec2_instances(conn, filter):
     """
     Connects to EC2, returns a connection object
@@ -87,6 +91,11 @@ def get_ec2_instances(conn, filter):
                 tbl.add_row([i.tags['Name'] if i.tags.has_key('Name') else '',i.id,i.public_dns_name,i.ip_address,i.instance_type,i.placement,i.private_ip_address,i.vpc_id,i.launch_time,i.state])
 
 
+def optional(a):
+    if not a:
+        return ''
+    return str(a)
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', '--profile', type=str,
@@ -96,15 +105,11 @@ def parse_args():
                               '(Example: --filter running)'))
     return parser.parse_args()
 
-def optional(a):
-    if not a:
-        return ''
-    return str(a)
 
 if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt:
-      # do nothing here
+        print 'Interrupted'
         pass
 

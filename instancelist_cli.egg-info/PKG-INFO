@@ -1,7 +1,7 @@
 Metadata-Version: 1.0
-Name: appcito-cli
+Name: instancelist-cli
 Version: 0.0.2
-Summary: Appcito Utility
+Summary: Ec2 instance listing Utility
 Home-page: UNKNOWN
 Author: Prajith Nair
 Author-email: prajith@appcito.com

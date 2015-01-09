@@ -1,7 +1,7 @@
 Inventory Tool
 ============
 
-Automation tools 
+Automation tool : 
 
 Using inventory listing tool, you can list all or specific instances running/stopped/terminated in AWS account:
 

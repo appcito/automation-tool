@@ -9,15 +9,12 @@ Display EC2 hosts in any region by default
 
 optional arguments:
 -h, --help            show this help message and exit
--k AWS_KEY, --aws-key AWS_KEY (Amazon EC2 Key)
-                                                   
--s AWS_SECRET, --aws-secret AWS_SECRET (Amazon EC2 Secret)
-                                                       
---filter FILTER  Amazon EC2 API filter to limit the result returned.(Example: --filter running)
+-p PROFILE            AWS account would be considered as profile parameter                                               
+-f FILTER  Amazon EC2 API filter to limit the result returned.(Example: --filter running)
                                                                                                        
 
 Installation sets up for appcito-cli command
 **************************************
 Run : sudo python setup.py install
-Once setup.py is executed successfully, you can run:  appcito-cli 
+Once setup.py is executed successfully, you can run:  instancelist-cli 
 

@@ -3,7 +3,7 @@ Inventory Tool
 
 Automation tools 
 
-Using inventory listing tool, you can list all or specific instances running/stopped/terminated in Appcito AWS account:
+Using inventory listing tool, you can list all or specific instances running/stopped/terminated in AWS account:
 
 Please check if python is installed. If you are running RHEL, run below:
 

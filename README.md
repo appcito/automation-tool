@@ -1,9 +1,9 @@
-Inventory Tool
-============
+Inventory Tool for listing AWS ec2 instances 
+============================================
 
-Automation tool : 
+Using inventory listing tool, you can list all or specific instances which are running/stopped/terminated in AWS account:
 
-Using inventory listing tool, you can list all or specific instances running/stopped/terminated in AWS account:
+Prerequisite : 
 
 Please check if python is installed. If you are running RHEL, run below:
 
@@ -35,7 +35,7 @@ This will install it for version 2.7.6
 
 curl https://raw.githubusercontent.com/pypa/pip/master/contrib/get-pip.py | python2.7 -
 
-
+Installation Steps for instancelist-cli
 
 Steps 1) sudo python setup.py install
 
@@ -48,10 +48,9 @@ usage: instancelist-cli [-h] [-p PROFILE] [--filter FILTER]
 
 optional arguments:
   -h, --help            show this help message and exit
-    -p PROFILE, --profile PROFILE
-                            Configuration profile
-                              --filter FILTER       Amazon EC2 API filter to limit the result returned.
-                                                      (Example: --filter running)
+  -p , --profile PROFILE Configuration profile
+  -f, filter FILTER       Amazon EC2 API filter to limit the result returned. (Example: --filter running)
+
 Please make sure that you create ~/.cred/config file and add aws key and secret in config file, it would like below:
 
 Here [Default]  is default profile selected.
